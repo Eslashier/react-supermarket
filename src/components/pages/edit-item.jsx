@@ -1,10 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./add-item-styles.css";
-import { v4 as uuid } from "uuid";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import {
-  addProduct,
   editProduct,
   setSelectedProduct,
 } from "../../state/features/productSlice";
@@ -25,7 +23,6 @@ const EditItem = () => {
   const [stock, setStock] = useState(selectedProduct.stock);
   const [url, setUrl] = useState(selectedProduct.uri);
   const [description, setDescription] = useState(selectedProduct.description);
-
 
   let navigate = useNavigate();
 
@@ -49,6 +46,10 @@ const EditItem = () => {
       );
     }
   };
+
+  if (!selectedProduct) {
+    return <div>Producto no encontrado.</div>;
+  }
 
   return (
     <>
