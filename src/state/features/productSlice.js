@@ -66,7 +66,23 @@ const productSlice = createSlice({
                 (product) => product.id === action.payload
             );
             state.selectedProduct = selectedProduct || null;
-        }
+        },
+
+        addProduct: (state, action) => {
+            state.products.push(action.payload);
+        },
+
+        editProduct: (state, action) => {
+            const updatedProduct = action.payload;
+            const index = state.products.findIndex(
+                (product) => product.id === updatedProduct.id
+            );
+            state.products[index] = updatedProduct;
+        },
+        deleteProduct: (state, action) => {
+            const productId = action.payload;
+            state.products = state.products.filter((product) => product.id !== productId);
+        },
     },
 })
 
@@ -76,4 +92,4 @@ export const selectProductsState = () => (state) => state.products.products
 export const selectProductsStatus = () => (state) => state.products.status
 export const selectProductsFetchError = () => (state) => state.products.error
 
-export const { setSelectedProduct } = productSlice.actions;
+export const { setSelectedProduct, addProduct, deleteProduct, editProduct } = productSlice.actions;

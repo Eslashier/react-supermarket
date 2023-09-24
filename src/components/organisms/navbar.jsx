@@ -7,9 +7,9 @@ const Navbar = () => {
     <>
       <nav>
         <ul className="container">
-          <a href="../" className="logo">
+          <NavLink to="../" className="logo">
             <img src={logo} alt="logo" height="80px" />
-          </a>
+          </NavLink>
           <li className="nav-items">
             <NavLink
               to="/products"

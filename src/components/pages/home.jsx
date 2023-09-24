@@ -13,11 +13,11 @@ const Home = () => {
         </div>
         <div className="text-images">
           <div className="text-set">
-            Il était un grand nombre de fois Un homme qui aimait une femme Il
-            était un grand nombre de fois Une femme qui aimait un homme Il était
-            un grand nombre de fois Une femme et un homme Qui n'aimaient pas
-            celui et celle qui les aimaient Il était une fois Une seule fois
-            peut-être Une femme et un homme qui s'aimaient
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mollis
+            elementum urna sed efficitur. Suspendisse maximus egestas sapien,
+            vitae malesuada ipsum tempor ut. Vivamus lacus diam, egestas non
+            dapibus facilisis, feugiat a nulla. Mauris vestibulum metus mattis
+            justo sagittis, id egestas ante ultricies.
           </div>
           <img src={mini1} alt="logo" className="image-set" />
           <img src={mini2} alt="logo" className="image-set" />

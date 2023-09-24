@@ -1,18 +1,18 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import "./danger-button.css";
-const DangerButton = (props) => {
-
-    const { text } = props; 
-
+const DangerButton = ({ onClickFunction, text }) => {
   return (
     <>
-      <button className={'danger-button'}>{text}</button>
+      <button className={"danger-button"} onClick={onClickFunction}>
+        {text}
+      </button>
     </>
   );
 };
 
 DangerButton.propTypes = {
-    text: PropTypes.string,
-}
+  onClickFunction: PropTypes.func,
+  text: PropTypes.string,
+};
 
 export default DangerButton;

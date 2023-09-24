@@ -2,7 +2,7 @@ import LoginButton from "../atoms/login-button";
 import Footer from "../organisms/footer";
 import "./login-styles.css";
 import background from "../../assets/background.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -16,8 +16,8 @@ const Login = () => {
             backgroundSize: "100% 100%",
           }}
         >
-          <a
-            href="../"
+          <NavLink
+            to="../"
             style={{
               textDecoration: "none",
               width: "500px",
@@ -28,10 +28,10 @@ const Login = () => {
           >
             <h1 className="title">FRESH MARKET A&L</h1>
             <h3 className="slogan">Productos frescos y de calidad</h3>
-          </a>
+          </NavLink>
         </div>
         <div className="form">
-          <form action="/action_page.php">
+          <form>
             <div>
               <label htmlFor="fname" className="tags">
                 Usuario:

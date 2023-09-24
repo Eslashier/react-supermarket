@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./footer-styles.css";
 import { AiOutlineInstagram, AiOutlineGlobal } from "react-icons/ai";
 
@@ -7,10 +8,10 @@ const Footer = () => {
       <div className="footer">
         <div className="websites-div">
           <div className="websites">
-            <a href="../" className="hyperlink">
+            <NavLink to="../" className="hyperlink">
               <AiOutlineGlobal style={{ fontSize: "20px" }} />
               &nbsp;www.FreshMarketA&L.com
-            </a>
+            </NavLink>
           </div>
           <div className="websites">
             <a href="https://www.instagram.com/" className="hyperlink">

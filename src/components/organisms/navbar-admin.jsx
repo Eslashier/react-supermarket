@@ -7,14 +7,14 @@ const NavbarAdmin = () => {
     <>
       <nav>
         <ul className="container">
-          <a href="../" className="logo">
+          <NavLink to="../" className="logo">
             <img src={logo} alt="logo" height="80px" />
-          </a>
+          </NavLink>
           <li className="nav-items">
             <NavLink
               to="/admin/inventory"
               style={(isActive) => ({
-                "textDecoration": isActive.isActive ? "underline" : "none",
+                textDecoration: isActive.isActive ? "underline" : "none",
               })}
             >
               Inventario
@@ -24,7 +24,7 @@ const NavbarAdmin = () => {
             <NavLink
               to="/admin/add-item"
               style={(isActive) => ({
-                "textDecoration": isActive.isActive ? "underline" : "none",
+                textDecoration: isActive.isActive ? "underline" : "none",
               })}
             >
               Agregar producto
