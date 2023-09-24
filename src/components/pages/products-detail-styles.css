@@ -1,0 +1,36 @@
+.product-name-title {
+    color: var(--green-color);
+    size: 20%;
+    font-weight: 900;
+    font-size: 250%;
+}
+
+.product-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 1px solid red; */
+    width: 75%;
+}
+
+.product-information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-detail-image {
+    width: 400px;
+    height: 400px;
+    margin: 0% 5% 0% 5%;
+}
+
+.info-detail {
+    width: 40%;
+    margin: 100px;
+}
+
+.product-detail-text {
+    font-size: 150%;
+    font-weight: 100;
+}

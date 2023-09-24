@@ -1,6 +1,7 @@
 import DangerButton from "../atoms/danger-button";
 import PropTypes from "prop-types";
 import OkButton from "../atoms/ok-button";
+import "./row-inventory-styles.css"
 
 const RowInventory = (props) => {
 
@@ -13,7 +14,7 @@ const RowInventory = (props) => {
         <td>{name}</td>
         <td>${price}</td>
         <td>{stock}</td>
-        <td>{uri}</td>
+        <td className="uri-cell">{uri}</td>
         <td>
           <OkButton text="Editar" />
         </td>

@@ -1,52 +1,11 @@
+import { useSelector } from "react-redux";
 import RowInventory from "../molecules/row-inventory";
 import './table-styles.css';
 
-const info = [
-  {
-    id: "an id",
-    name: "Leche",
-    price: "7000",
-    stock: "20",
-    uri: "https://an.uri.com/image",
-  },
-  {
-    id: "an id2",
-    name: "Leche",
-    price: "7000",
-    stock: "30",
-    uri: "https://an.uri.com/image",
-  },
-  {
-    id: "an id3",
-    name: "Leche",
-    price: "7000",
-    stock: "20",
-    uri: "https://an.uri.com/image",
-  },
-  {
-    id: "an id4",
-    name: "Leche",
-    price: "7000",
-    stock: "30",
-    uri: "https://an.uri.com/image",
-  },
-  {
-    id: "an id5",
-    name: "Leche",
-    price: "7000",
-    stock: "20",
-    uri: "https://an.uri.com/image",
-  },
-  {
-    id: "an id6",
-    name: "Leche",
-    price: "7000",
-    stock: "30",
-    uri: "https://an.uri.com/image",
-  },
-];
-
 const TableInventory = () => {
+
+  const inventory = useSelector((state) => state.products.products);
+
   return (
     <>
       <table>
@@ -62,7 +21,7 @@ const TableInventory = () => {
           </tr>
         </thead>
         <tbody>
-          {info.map((row) => (
+          {inventory.map((row) => (
             <RowInventory key={row.id} data={row} />
           ))}
         </tbody>

@@ -10,6 +10,7 @@ import Categories from "./components/pages/categories";
 import NoPage from "./components/pages/no-page";
 import Login from "./components/pages/login";
 import LayoutAdmin from "./components/pages/layout admin";
+import ProductDetail from "./components/pages/products-detail";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="products" element={<Products />} />
+          <Route path="/product/:id" element={<ProductDetail/>} />
           <Route path="categories" element={<Categories />} />
         </Route>
         <Route path="/login" element={<Login />} />
