@@ -1,0 +1,19 @@
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th {
+    background-color: var(--green-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 10px;
+    border: 4px solid var(--brown-color);
+}
+
+td {
+    padding: 20px;
+    text-align: center;
+    border: 4px solid var(--brown-color);
+}

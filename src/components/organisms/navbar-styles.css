@@ -1,0 +1,31 @@
+.line-divider-nav {
+    width: 80%;
+    margin: auto;
+    border-bottom: 1px solid var(--brown-color);
+    margin-bottom: 20px;
+}
+
+.logo {
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.container {
+    list-style: none;
+    display: flex;
+    font-size: 110%;
+    margin: 0 9% 0 8%;
+}
+
+.nav-items {
+    padding-right: 30px;
+    padding-top: 39px;
+}
+
+
+.nav-items a {
+    text-decoration: none;
+    color: var(--green-color);
+    font-weight: bolder;
+    /* border: 1px solid red; */
+}

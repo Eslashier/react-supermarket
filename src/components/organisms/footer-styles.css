@@ -1,0 +1,38 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--brown-color);
+    color: white;
+    text-align: center;
+}
+
+.brand {
+    padding: 8px;
+    font-size: smaller;
+    font-weight: bold;
+}
+
+.line-divider {
+    width: 80%;
+    margin: auto;
+    border-bottom: 1px solid var(--white-color);
+}
+
+.websites-div {
+    display: flex;
+    justify-content: center;
+}
+
+.websites {
+    margin: 0.6% 5% 0.6% 5%;
+}
+
+.hyperlink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+}

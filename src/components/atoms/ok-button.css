@@ -1,0 +1,14 @@
+.ok-button {
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid var(--brown-color);
+    background-color: var(--green-color-button);
+    color: var(--white-color);
+    padding: 10px 20px 10px 20px;
+    transition-duration: 0.3s;
+}
+
+.ok-button:hover {
+    background-color: var(--green-color-hover);
+    box-shadow: 0 4px 4px 0 #808080, 0 2px 2px 0 #808080;
+}

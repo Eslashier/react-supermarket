@@ -1,0 +1,28 @@
+.product-image {
+    width: 200px;
+    height: 200px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: -25px;
+}
+
+.product-item {
+    border: 1px solid var(--brown-color);
+    padding: 010px 10px 10px 10px;
+    margin: 10px;
+}
+
+.product-name {
+    color: var(--green-color);
+    margin: 20px 0px 0px 0px;
+    font-size: 150%;
+}
+
+.product-price {
+    color: black;
+    margin: 0px;
+}

@@ -1,0 +1,15 @@
+.login-button{
+    font-size: 1.25rem;
+    font-weight: bold;
+    border: 1px solid var(--green-color-button);
+    background-color: var(--green-color-button);
+    color: var(--white-color);
+    padding: 3% 15% 3% 15%;
+    transition-duration: 0.3s;
+    margin: 50px;
+}
+
+.login-button:hover {
+    background-color: var(--green-color-hover);
+    box-shadow: 0 4px 4px 0 #808080, 0 2px 2px 0 #808080;
+}
