@@ -1,6 +1,6 @@
 import Footer from "../organisms/footer";
 import Navbar from "../organisms/navbar";
-import "./no-page-styles.css"
+import "./no-page-styles.css";
 
 const NoPage = () => {
   return (

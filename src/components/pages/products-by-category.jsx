@@ -14,7 +14,12 @@ const ProductsByCategory = () => {
   const inventory = useSelector((state) => state.products.filteredProducts);
   const items = inventory.slice(0, 20);
 
-  if (items.length === 0) return <h1>No se han encontrado productos</h1>;
+  if (inventory.length === 0)
+    return (
+      <div className="body">
+        <h1>No se han encontrado productos</h1>
+      </div>
+    );
 
   return (
     <>
