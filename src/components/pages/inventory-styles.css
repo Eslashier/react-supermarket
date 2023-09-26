@@ -4,3 +4,10 @@
     align-items: center;
     padding: 20px;
 }
+
+.button-add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6%;
+}

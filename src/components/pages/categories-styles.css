@@ -1,0 +1,31 @@
+.categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 82%;
+    margin: auto;
+}
+
+.category {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    border: 2px solid var(--green-color);
+    margin: 2rem;
+    height: 15rem;
+    width: 40rem;
+}
+
+.row {}
+
+.image-category {
+    height: 200px;
+    width: 200px;
+    margin-left: 4%;
+}
+
+.text-category {
+    color: var(--green-color);
+    text-decoration: none;
+    margin-left: 20px;
+}

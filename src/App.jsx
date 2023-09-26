@@ -12,6 +12,7 @@ import Login from "./components/pages/login";
 import LayoutAdmin from "./components/pages/layout admin";
 import ProductDetail from "./components/pages/products-detail";
 import EditItem from "./components/pages/edit-item";
+import ProductsByCategory from "./components/pages/products-by-category";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="products" element={<Products />} />
           <Route path="/product/:id" element={<ProductDetail/>} />
           <Route path="categories" element={<Categories />} />
+          <Route path="categories/:category" element={<ProductsByCategory />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/admin/" element={<LayoutAdmin />}>
