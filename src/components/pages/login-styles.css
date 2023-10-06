@@ -73,6 +73,12 @@ input::placeholder {
     margin-bottom: 10;
     font-size: 75%;
 }
+.wrong-password {
+    color: red;
+    margin-top: 0;
+    margin-bottom: 10;
+    font-size: 75%;
+}
 
 html,
 body {

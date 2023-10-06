@@ -23,6 +23,7 @@ const loginSlice = createSlice({
         builder.addCase(login.fulfilled, (state) => {
             state.status = possibleStatus.COMPLETED;
             state.isLogged = true;
+            state.error = null;
         })
     }
 })

@@ -3,24 +3,24 @@ import Footer from "../organisms/footer";
 import "./login-styles.css";
 import background from "../../assets/background.png";
 import { NavLink, useNavigate } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { login } from "../../actions/users/login";
 import { useAppDispatch } from "../../state/store";
 import { useSelector } from "react-redux";
 
-
 const Login = () => {
   const [mail, setMail] = useState();
   const [password, setPassword] = useState();
+  const [isInvalid, setIsInvalid] = useState(false);
   const isLogged = useSelector((state) => state.login.isLogged);
+  const error = useSelector((state) => state.login.error);
   let navigate = useNavigate();
 
   useEffect(() => {
     if (isLogged) {
       navigate("../admin/inventory");
     }
-  }, [isLogged, navigate]);
+  }, [isLogged, error, navigate]);
 
   const dispatch = useAppDispatch();
 
@@ -33,9 +33,10 @@ const Login = () => {
     };
 
     dispatch(login(payload))
+      .then(setIsInvalid(false))
+      .catch(() => setIsInvalid(true));
+    console.log(isInvalid);
   };
-
-
 
   return (
     <>
@@ -97,6 +98,13 @@ const Login = () => {
             <div className="div-button">
               <h4 className="forgot-password">¿Olvidó su contraseña?</h4>
             </div>
+            {isInvalid && (
+              <div className="div-button">
+                <h4 className="wrong-password">
+                  Usuario o contraseña incorrecta
+                </h4>
+              </div>
+            )}
             <div className="div-button">
               <LoginButton text={"Iniciar sesión"} />
             </div>

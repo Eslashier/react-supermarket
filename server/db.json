@@ -7,14 +7,6 @@
             "email": "admin@freshmarketa&l.com",
             "password": "$2a$10$znICwiWVoWsUcwtW38VyLeZescXKuFE5ngDj1WxHTtFvV7qQiqbVC",
             "salt": "$2a$10$znICwiWVoWsUcwtW38VyLe"
-        },
-        {
-            "id": "9d419738-d07d-47d2-b3e3-7d4b8b46ab8f",
-            "firstName": "Roy",
-            "lastName": "Kent2",
-            "email": "admin2@freshmarketa&l.com",
-            "password": "$2a$10$znICwiWVoWsUcwtW38VyLeZescXKuFE5ngDj1WxHTtFvV7qQiqbVC",
-            "salt": "$2a$10$znICwiWVoWsUcwtW38VyLe"
         }
     ]
 }
