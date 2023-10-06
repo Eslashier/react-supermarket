@@ -2,9 +2,41 @@ import LoginButton from "../atoms/login-button";
 import Footer from "../organisms/footer";
 import "./login-styles.css";
 import background from "../../assets/background.png";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { login } from "../../actions/users/login";
+import { useAppDispatch } from "../../state/store";
+import { useSelector } from "react-redux";
+
 
 const Login = () => {
+  const [mail, setMail] = useState();
+  const [password, setPassword] = useState();
+  const isLogged = useSelector((state) => state.login.isLogged);
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLogged) {
+      navigate("../admin/inventory");
+    }
+  }, [isLogged, navigate]);
+
+  const dispatch = useAppDispatch();
+
+  const OnLogin = (e) => {
+    e.preventDefault();
+
+    const payload = {
+      email: mail,
+      password: password,
+    };
+
+    dispatch(login(payload))
+  };
+
+
+
   return (
     <>
       <div className="login-container">
@@ -31,7 +63,7 @@ const Login = () => {
           </NavLink>
         </div>
         <div className="form">
-          <form>
+          <form onSubmit={(e) => OnLogin(e)}>
             <div>
               <label htmlFor="fname" className="tags">
                 Usuario:
@@ -44,6 +76,7 @@ const Login = () => {
                 name="user"
                 className="input-user"
                 placeholder="example@mail.com"
+                onChange={(e) => setMail(e.target.value)}
               />
             </div>
             <div>
@@ -58,16 +91,15 @@ const Login = () => {
                 name="password"
                 className="input-password"
                 placeholder="contraseña"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="div-button">
               <h4 className="forgot-password">¿Olvidó su contraseña?</h4>
             </div>
-            <Link to={"../admin/inventory"} style={{ textDecoration: "none" }}>
-              <div className="div-button">
-                <LoginButton text={"Iniciar sesión"} />
-              </div>
-            </Link>
+            <div className="div-button">
+              <LoginButton text={"Iniciar sesión"} />
+            </div>
           </form>
         </div>
       </div>

@@ -1,16 +1,27 @@
-import { Outlet} from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import Footer from "../organisms/footer";
-import "./layout-styles.css"
+import "./layout-styles.css";
 import NavbarAdmin from "../organisms/navbar-admin";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const LayoutAdmin = () => {
-    return (
-        <>
-          <NavbarAdmin />
-          <Outlet />
-          <Footer />
-        </>
-      )
+  const isLogged = useSelector((state) => state.login.isLogged);
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isLogged) {
+      navigate("../../login");
+    }
+  }, [isLogged, navigate]);
+
+  return (
+    <>
+      <NavbarAdmin />
+      <Outlet />
+      <Footer />
+    </>
+  );
 };
 
 export default LayoutAdmin;

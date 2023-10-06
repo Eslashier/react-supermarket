@@ -1,8 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
 import "./navbar-styles.css";
 import logo from "../../assets/logo.png";
+import { logout } from "../../state/features/loginSLice"
+import { useDispatch } from "react-redux";
 
 const NavbarAdmin = () => {
+
+  const dispatch = useDispatch();
+
+  const OnLogOut = () => {
+    console.log('hola');
+    dispatch(logout());
+  };
+
+
   return (
     <>
       <nav>
@@ -31,7 +42,7 @@ const NavbarAdmin = () => {
             </NavLink>
           </li>
           <li className="nav-items">
-            <Link to={".."}>Cerrar sesión</Link>
+            <Link to={".."} onClick={()=>OnLogOut()}>Cerrar sesión</Link>
           </li>
         </ul>
         <hr className="line-divider-nav" />
