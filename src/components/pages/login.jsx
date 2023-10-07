@@ -35,7 +35,6 @@ const Login = () => {
     dispatch(login(payload))
       .then(setIsInvalid(false))
       .catch(() => setIsInvalid(true));
-    console.log(isInvalid);
   };
 
   return (

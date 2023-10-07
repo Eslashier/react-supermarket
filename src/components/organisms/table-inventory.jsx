@@ -1,10 +1,19 @@
 import { useSelector } from "react-redux";
 import RowInventory from "../molecules/row-inventory";
 import './table-styles.css';
+import { useEffect } from "react";
+import { getProducts } from "../../actions/users/get-products";
+import { useAppDispatch } from "../../state/store";
 
 const TableInventory = () => {
 
   const inventory = useSelector((state) => state.products.products);
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
 
   return (
     <>

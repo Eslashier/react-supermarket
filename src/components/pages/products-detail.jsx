@@ -1,15 +1,18 @@
 import "./products-detail-styles.css";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedProduct } from "../../state/features/productSlice";
 import AddButton from "../atoms/add-button";
+import { useEffect } from "react";
+import { getProduct } from "../../actions/users/get-product";
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
   const location = useLocation().pathname;
   const productId = location.split("/").pop();
 
-  dispatch(setSelectedProduct(productId));
+  useEffect(() => {
+    dispatch(getProduct({ id: productId }));
+  }, [dispatch, productId]);
 
   const selectedProduct = useSelector(
     (state) => state.products.selectedProduct

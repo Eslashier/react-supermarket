@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 
 const getUsersUrl = urlApi + "/users";
 
-export const login = createAsyncThunk('getAllBills', async (payload) => {
+export const login = createAsyncThunk('getUser', async (payload) => {
     const { email, password } = payload;
     const response = await fetch(`${getUsersUrl}?email_like=${email}`)
     const body = await response.json();

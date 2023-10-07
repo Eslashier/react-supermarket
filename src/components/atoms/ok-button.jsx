@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import "./ok-button.css";
 const OkButton = (props) => {
-
     const { text } = props; 
 
   return (
