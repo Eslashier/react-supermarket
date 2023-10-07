@@ -3,7 +3,7 @@ import "./add-item-styles.css";
 import { v4 as uuid } from "uuid";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { addProduct } from "../../state/features/productSlice";
+import { postProduct } from "../../actions/users/add-product";
 
 const AddItem = () => {
   const [name, setName] = useState("");
@@ -28,7 +28,7 @@ const AddItem = () => {
         uri: url,
         description: description,
       };
-      dispatch(addProduct(productToAdd));
+      dispatch(postProduct(productToAdd));
       navigate("../inventory");
     } else {
       alert(

@@ -1,28 +1,33 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./add-item-styles.css";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import {
-  editProduct,
-  setSelectedProduct,
-} from "../../state/features/productSlice";
+import { useState, useEffect } from "react";
+import { getProduct } from "../../actions/users/get-product";
+import { updateProduct } from "../../actions/users/update-product";
 
 const EditItem = () => {
+  const dispatch = useDispatch();
   const location = useLocation().pathname;
   const productId = location.split("/").pop();
-  const dispatch = useDispatch();
-
-  dispatch(setSelectedProduct(productId));
-
+  const [name, setName] = useState('');
+  const [price, setPrice] = useState(0);
+  const [stock, setStock] = useState(0);
+  const [url, setUrl] = useState('');
+  const [description, setDescription] = useState('');
   const selectedProduct = useSelector(
     (state) => state.products.selectedProduct
   );
 
-  const [name, setName] = useState(selectedProduct.name);
-  const [price, setPrice] = useState(selectedProduct.price);
-  const [stock, setStock] = useState(selectedProduct.stock);
-  const [url, setUrl] = useState(selectedProduct.uri);
-  const [description, setDescription] = useState(selectedProduct.description);
+  useEffect(() => {
+    dispatch(getProduct({ id: productId }));
+    setName(selectedProduct?.name);
+    setPrice(selectedProduct?.price);
+    setStock(selectedProduct?.stock);
+    setUrl(selectedProduct?.uri);
+    setDescription(selectedProduct?.description);
+  }, [dispatch, location]);
+
+
 
   let navigate = useNavigate();
 
@@ -38,7 +43,7 @@ const EditItem = () => {
         uri: url,
         description: description,
       };
-      dispatch(editProduct(productToEdit));
+      dispatch(updateProduct(productToEdit));
       navigate("../inventory");
     } else {
       alert(

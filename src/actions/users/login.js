@@ -17,6 +17,6 @@ export const login = createAsyncThunk('getUser', async (payload) => {
     if (body[0].email === email && isPasswordCorrect) {
         return true;
     }
-
-    return false;
+    
+    throw new Error('invalid credentials');
 })

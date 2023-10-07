@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { login } from "../../actions/users/login";
 
 const initialState = {
-    isLogged: false,
+    isLogged: true,//todo: poner en falso
     status: possibleStatus.IDLE,
     error: null,
 }
@@ -20,10 +20,18 @@ const loginSlice = createSlice({
     },
     extraReducers: (builder) => {
         //LOGIN
-        builder.addCase(login.fulfilled, (state) => {
+        builder.addCase(login.fulfilled, (state, payload) => {
             state.status = possibleStatus.COMPLETED;
-            state.isLogged = true;
+            state.isLogged = payload.payload;
             state.error = null;
+        })
+        builder.addCase(login.pending, (state) => {
+            state.error = null;
+        })
+        builder.addCase(login.rejected, (state) => {
+            state.status = possibleStatus.FAILED;
+            state.isLogged = false;
+            state.error = 'Error al iniciar sesión';
         })
     }
 })

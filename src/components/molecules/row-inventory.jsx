@@ -3,16 +3,18 @@ import PropTypes from "prop-types";
 import OkButton from "../atoms/ok-button";
 import "./row-inventory-styles.css";
 import { useDispatch } from "react-redux";
-import { deleteProduct } from "../../state/features/productSlice";
+
 import { Link } from "react-router-dom";
+import { deleteProduct } from "../../actions/users/delete-product";
 
 const RowInventory = (props) => {
   const { id, name, price, stock, uri } = props.data;
 
   const dispatch = useDispatch();
 
-  const onDelete = () => {
-    dispatch((deleteProduct(id)));
+  const onDelete = (id) => {
+    console.log(id);
+    dispatch((deleteProduct({id})));
   };
 
   const toUrl = `/admin/inventory/edit/${id}`
@@ -31,7 +33,7 @@ const RowInventory = (props) => {
           </Link>
         </td>
         <td>
-          <DangerButton text="Borrar" onClickFunction={onDelete}/>
+          <DangerButton text="Borrar" onClickFunction={()=>onDelete(id)}/>
         </td>
       </tr>
     </>

@@ -22,6 +22,12 @@ const Login = () => {
     }
   }, [isLogged, error, navigate]);
 
+  useEffect(() => {
+    if (error) {
+      setIsInvalid(true)
+    }
+  }, [error]);
+
   const dispatch = useAppDispatch();
 
   const OnLogin = (e) => {
@@ -34,7 +40,6 @@ const Login = () => {
 
     dispatch(login(payload))
       .then(setIsInvalid(false))
-      .catch(() => setIsInvalid(true));
   };
 
   return (
